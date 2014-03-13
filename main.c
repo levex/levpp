@@ -37,6 +37,7 @@ int process_file(char *filename)
 	}
 
 	syntax_check(file_buf);
+	semantic_analyze(file_buf);
 }
 
 int main(int argc, char *argv[])

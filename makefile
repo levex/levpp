@@ -7,6 +7,7 @@ APP = levpp
 OBJS = main.o
 
 include syntax/makefile
+include semantic/makefile
 
 all: $(APP)
 

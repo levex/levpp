@@ -1,0 +1,1 @@
+OBJS += semantic/semantic.o
