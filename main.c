@@ -36,8 +36,7 @@ int process_file(char *filename)
 		return 1;
 	}
 
-	printf("%s", file_buf);
-
+	syntax_check();
 }
 
 int main(int argc, char *argv[])

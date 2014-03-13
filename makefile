@@ -6,6 +6,8 @@ APP = levpp
 
 OBJS = main.o
 
+include syntax/makefile
+
 all: $(APP)
 
 clean:
@@ -18,4 +20,4 @@ $(APP): $(OBJS)
 
 %.o: %.c
 	@echo "  CC           $@"
-	@$(CC) -c $<
+	@$(CC) -Iinclude -c $< -o $@
