@@ -1,4 +1,4 @@
-.PHONY: all run link
+.PHONY: all run clean
 
 # configuration
 CC = gcc
@@ -7,6 +7,10 @@ APP = levpp
 OBJS = main.o
 
 all: $(APP)
+
+clean:
+	-@rm $(APP)
+	-@rm $(OBJS)
 
 $(APP): $(OBJS)
 	@echo "  LN           $(APP)"
