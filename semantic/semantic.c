@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <levpp/ast.h>
 
 char *__read_line(char *buf, char **b)
 {
@@ -23,11 +24,20 @@ char *__read_line(char *buf, char **b)
 	return ret;
 }
 
+void parse_line(char *line, ast_t *ast)
+{
+	printf("Parsing line: %s", line);
+}
+
 void semantic_analyze(char *__buf)
 {
 	char *line = 0;
 	int len = strlen(__buf);
 	char *__start = __buf;
+
+	printf("Creating an AST for file\n");
+	ast_t *ast = malloc(sizeof(ast_t));
+	memset(ast, 0, sizeof(ast_t));
 
 	do {
 		line = __read_line(__buf, &__buf);
@@ -35,7 +45,7 @@ void semantic_analyze(char *__buf)
 			break;
 		if (__buf > __start + len)
 			break;
-		printf("%s", line);
+		parse_line(line, ast);
 		free(line);
 	} while (1);
 }
