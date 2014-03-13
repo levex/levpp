@@ -2,13 +2,13 @@
 #include <stdint.h>
 #include <levpp/syntax.h>
 
-int check_braces(uint8_t *buf)
+int check_braces(char *buf)
 {
 	int open_squared = 0;
 	int open_circ = 0;
 	int open_curl = 0;
-
-	while(*buf ++ != 0) {
+	
+	while(*buf++) {
 		if (*buf == '[')
 			open_squared ++;
 		else if (*buf == '(')

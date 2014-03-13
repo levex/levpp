@@ -4,7 +4,7 @@
 
 void syntax_error(char *str)
 {
-	printf("Syntax error: %s\n", str);
+	printf("Syntax error: %s", str);
 	return;
 }
 
