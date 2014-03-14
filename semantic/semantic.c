@@ -27,6 +27,8 @@ char *__read_line(char *buf, char **b)
 void parse_line(char *line, ast_t *ast)
 {
 	printf("Parsing line: %s", line);
+	if (try_parse_variable(line, ast))
+		return;
 }
 
 void semantic_analyze(char *__buf)
@@ -38,6 +40,8 @@ void semantic_analyze(char *__buf)
 	printf("Creating an AST for file\n");
 	ast_t *ast = malloc(sizeof(ast_t));
 	memset(ast, 0, sizeof(ast_t));
+	set_root_ast(ast);
+	//__debug_dump_ast(ast);
 
 	do {
 		line = __read_line(__buf, &__buf);
@@ -48,4 +52,6 @@ void semantic_analyze(char *__buf)
 		parse_line(line, ast);
 		free(line);
 	} while (1);
+	
+	__debug_dump_ast(ast);
 }

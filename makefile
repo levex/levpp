@@ -8,6 +8,7 @@ OBJS = main.o
 
 include syntax/makefile
 include semantic/makefile
+include ast/makefile
 
 all: $(APP)
 
