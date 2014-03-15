@@ -1,0 +1,27 @@
+.PHONY: all run clean
+
+# configuration
+CC = @CC@ 
+APP = @PACKAGE_NAME@
+SRCDIR = @srcdir@
+
+
+OBJS = $(SRCDIR)/main.o
+
+include $(SRCDIR)/syntax/makefile
+include $(SRCDIR)/semantic/makefile
+include $(SRCDIR)/ast/makefile
+
+all: $(APP)
+
+clean:
+	-@rm $(APP)
+	-@rm $(OBJS)
+
+$(APP): $(OBJS)
+	@echo "  LN           $(APP)"
+	@$(CC) -o $(APP) $(OBJS)
+
+%.o: %.c
+	@echo "  CC           $@"
+	@$(CC) -I$(SRCDIR)/include -c $< -o $@
