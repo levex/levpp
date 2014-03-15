@@ -16,6 +16,9 @@ char *token_stringize_type(int type)
 	if (type == TOKEN_TYPE_VARIABLE)
 		return "variable";
 		
+	if (type == TOKEN_TYPE_FUNCTION_CALL)
+		return "function call";
+		
 	return "<null>";
 }
 

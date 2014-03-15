@@ -4,6 +4,7 @@
 
 #define TOKEN_TYPE_VARIABLE 1
 #define TOKEN_TYPE_ROOT_ELEMENT 2
+#define TOKEN_TYPE_FUNCTION_CALL 3
 
 typedef struct ___token_t {
 	char *name;

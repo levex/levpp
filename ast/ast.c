@@ -20,7 +20,6 @@ void add_to_ast(ast_t *parent, ast_t *child)
 {
 	/* if the parent has no child, we become their child */
 	if (!parent->child) {
-		//printf("AST: had no child, added directly\n");
 		parent->child = child;
 		return;
 	}

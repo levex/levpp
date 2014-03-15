@@ -29,6 +29,8 @@ void parse_line(char *line, ast_t *ast)
 	printf("Parsing line: %s", line);
 	if (try_parse_variable(line, ast))
 		return;
+	if (try_parse_call(line, ast))
+		return;
 }
 
 void semantic_analyze(char *__buf)

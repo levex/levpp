@@ -1,1 +1,1 @@
-OBJS += ast/ast.o
+OBJS += $(SRCDIR)/ast/ast.o
